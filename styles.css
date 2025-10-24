@@ -208,7 +208,7 @@ footer .social a {
   font-size: 1.2em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .menu-toggle {
     display: block;
   }
@@ -224,7 +224,7 @@ footer .social a {
     gap: 20px;
     padding: 20px 0;
     display: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   .nav-links.active {
