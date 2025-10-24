@@ -10,7 +10,10 @@
 <body>
   <nav class="navbar">
     <div class="logo">DigitalPro</div>
-    <ul class="nav-links">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
@@ -60,18 +63,15 @@
 
 <section id="contacto" class="contacto">
   <h2>Contáctanos</h2>
-
   <form action="https://api.web3forms.com/submit" method="POST" id="form" class="form">
     <input type="hidden" name="access_key" value="ea3ca43b-695f-47bb-be9b-2b739e5e90fd">
     <input type="hidden" name="subject" value="Nuevo mensaje desde la web DigitalPro">
     <input type="hidden" name="from_name" value="DigitalPro">
     <input type="hidden" name="redirect" value="https://web3forms.com/success">
     <input type="checkbox" name="botcheck" style="display: none;">
-
     <input type="text" name="name" placeholder="Nombre y Apellido" required>
     <input type="email" name="email" placeholder="Correo Electrónico" required>
     <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
-
     <button type="submit">Enviar</button>
   </form>
 </section>
@@ -87,17 +87,23 @@
 
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(enlace => {
-      enlace.addEventListener('click', function(e) {
-        e.preventDefault();
-        const destino = document.querySelector(this.getAttribute('href'));
-        if (destino) {
-          destino.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+      enlace.addEventListener('click', e => {
+        e.preventDefault()
+        const destino = document.querySelector(enlace.getAttribute('href'))
+        if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        document.getElementById('nav-links').classList.remove('active')
+      })
+    })
+
+    const menuToggle = document.getElementById('menu-toggle')
+    const navLinks = document.getElementById('nav-links')
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active')
+      menuToggle.classList.toggle('open')
+      const icon = menuToggle.querySelector('i')
+      icon.classList.toggle('fa-bars')
+      icon.classList.toggle('fa-xmark')
+    })
   </script>
 </body>
 </html>

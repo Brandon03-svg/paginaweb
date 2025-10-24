@@ -39,6 +39,8 @@ body {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -50,6 +52,13 @@ body {
 
 .nav-links a:hover {
   color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  color: var(--accent);
+  cursor: pointer;
 }
 
 .hero {
@@ -83,6 +92,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s;
+  display: inline-block;
 }
 
 .btn-hero:hover {
@@ -114,6 +124,7 @@ body {
   padding: 30px;
   width: 280px;
   transition: transform 0.3s;
+  text-align: center;
 }
 
 .card:hover {
@@ -195,4 +206,105 @@ footer .social a {
   color: var(--gold);
   margin: 0 8px;
   font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+    padding: 15px 20px;
+  }
+
+  .hero {
+    padding: 100px 8%;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+    padding: 25px 20px;
+  }
+
+  .nosotros .contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nosotros img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .contacto {
+    padding: 60px 8%;
+  }
+
+  footer {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1.3em;
+  }
+
+  .hero {
+    padding: 80px 5%;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p {
+    font-size: 0.95em;
+  }
+
+  footer {
+    font-size: 0.85em;
+  }
 }
