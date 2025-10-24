@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Digitales</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">DigitalPro</div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Soluciones Digitales para tu Negocio</h1>
+      <p>Desarrollamos aplicaciones móviles y sitios web modernos, rápidos y personalizados para potenciar tu presencia en línea.</p>
+      <a href="#contacto" class="btn-hero">Contáctanos</a>
+    </div>
+  </section>
+
+  <section id="servicios" class="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h3>Apps Móviles</h3>
+        <p>Desarrollo de aplicaciones nativas e híbridas optimizadas para Android e iOS.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Webs Estáticas</h3>
+        <p>Diseño y desarrollo de sitios web profesionales, seguros y totalmente personalizados.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-rocket"></i>
+        <h3>Optimización</h3>
+        <p>Mejoramos el rendimiento y posicionamiento de tus proyectos digitales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="nosotros">
+    <div class="contenido">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" alt="Equipo de trabajo">
+      <div>
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos un equipo de profesionales apasionados por la tecnología. Nos especializamos en crear soluciones digitales efectivas para emprendedores y empresas.</p>
+        <p>Creemos en el diseño funcional, el desarrollo ágil y la comunicación directa con nuestros clientes.</p>
+      </div>
+    </div>
+  </section>
+
+<section id="contacto" class="contacto">
+  <h2>Contáctanos</h2>
+
+  <form action="https://api.web3forms.com/submit" method="POST" id="form" class="form">
+    <input type="hidden" name="access_key" value="ea3ca43b-695f-47bb-be9b-2b739e5e90fd">
+    <input type="hidden" name="subject" value="Nuevo mensaje desde la web DigitalPro">
+    <input type="hidden" name="from_name" value="DigitalPro">
+    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+    <input type="checkbox" name="botcheck" style="display: none;">
+
+    <input type="text" name="name" placeholder="Nombre y Apellido" required>
+    <input type="email" name="email" placeholder="Correo Electrónico" required>
+    <textarea name="message" placeholder="Tu mensaje..." rows="5" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+  <footer>
+    <p>© 2025 DigitalPro | contacto@digitalpro.cl</p>
+    <div class="social">
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+      enlace.addEventListener('click', function(e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (destino) {
+          destino.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
